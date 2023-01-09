@@ -1,0 +1,31 @@
+﻿<Window x:Class="FTPUploader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FTPUploader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="664" ResizeMode="NoResize">
+    <Grid AutomationProperties.Name="TransferButton">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="SelectFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="25,105,0,0" VerticalAlignment="Top" Width="123" Click="Button_Click" AutomationProperties.Name="UploadFolder" IsCancel="True" Background="#FF0097FF" Height="35" />
+        <Button x:Name="TransferButton" Content="Transfer" HorizontalAlignment="Left" Margin="25,315,0,0" VerticalAlignment="Top" Width="147" RenderTransformOrigin="0.523,1.698" AutomationProperties.Name="TransferButton" Click="TransferButton_Click" Height="32" Background="#FF0097FF"/>
+        <Label x:Name="WelcomeLabel" Content="Welcome to the FTP uploader. This application allows you to slect simple files and upload them to a FTP" Margin="0,49,0,0" VerticalAlignment="Top" Height="56" AutomationProperties.Name="WelcomeLabel" HorizontalAlignment="Center" Width="576"/>
+        <ListView x:Name="ListDepotLabel" 
+HorizontalAlignment="Left" Margin="25,198,0,143"
+          VerticalContentAlignment="Top"  
+          ScrollViewer.VerticalScrollBarVisibility="Visible"
+          ScrollViewer.CanContentScroll="False" Width="576" AutomationProperties.Name="ListDepotLabel" SelectionChanged="ListDepotLabel_SelectionChanged">
+            <!-- etc. -->
+        </ListView>
+        <Label x:Name="StatusLabel" Content="" HorizontalAlignment="Left" Margin="200,281,0,0" VerticalAlignment="Top" Height="32" Width="417" AutomationProperties.Name="StatusLabel"/>
+        <Label x:Name="NameLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="189,110,0,0" Width="453" AutomationProperties.Name="NameLabel" Height="26"/>
+        <DockPanel HorizontalAlignment="Center" Height="49" LastChildFill="False" VerticalAlignment="Top" Width="664" OpacityMask="Black" Background="#FF0097FF"/>
+        <Label x:Name="File_Transfer" Content="FTP Uploader" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.092,-0.308" AutomationProperties.Name="File_Transfer" FontWeight="Bold" FontSize="24" Margin="241,2,0,0" Foreground="Black" BorderBrush="Black"/>
+        <ProgressBar x:Name="PbarUpload" HorizontalAlignment="Left" Height="28" Margin="25,365,0,0" VerticalAlignment="Top" Width="617" AutomationProperties.Name="PbarUpload" ValueChanged="PbarUpload_ValueChanged"/>
+
+    </Grid>
+</Window>
